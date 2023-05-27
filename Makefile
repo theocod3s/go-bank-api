@@ -5,7 +5,7 @@ createdb:
 	docker exec -it postgres15 createdb --username=root --owner=root simplebank
 
 dropdb: 
-	docker exec -it postgres15 dropdb simplebank
+	docker exec -it postgres15 dropdb simplebank -f
 
 migrateup:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simplebank?sslmode=disable" --verbose up
