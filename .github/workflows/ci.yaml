@@ -10,6 +10,10 @@ jobs:
   build:
     name: test
     runs-on: ubuntu-latest
+    env:
+      DB_DRIVER: postgres
+      DB_SOURCE: postgresql://root:secret@localhost:5432/simplebank?sslmode=disable
+      SERVER_ADDRESS: localhost:8080
 
     services:
       postgres:
