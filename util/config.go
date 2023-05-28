@@ -14,9 +14,15 @@ type Config struct {
 }
 
 // reads configuration from file or environment variables.
-func LoadConfig(path string) (config Config, err error) {
+func LoadConfig(path string, name string) (config Config, err error) {
+	var configName string
 	viper.AddConfigPath(path)
-	viper.SetConfigName("app")
+	if name != "" {
+		configName = name
+	} else {
+		configName = "app"
+	}
+	viper.SetConfigName(configName)
 	viper.SetConfigType("env")
 
 	viper.AutomaticEnv()

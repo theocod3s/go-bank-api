@@ -47,4 +47,4 @@ jobs:
         run: make migrateup
 
       - name: Test
-        run: DB_DRIVER=${{secrets.DB_DRIVER}} DB_SOURCE=${{secrets.DB_SOURCE}} make test
+        run: make test
