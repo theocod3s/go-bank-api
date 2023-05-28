@@ -19,9 +19,6 @@ func LoadConfig(path string) (config Config, err error) {
 	viper.SetConfigName("app")
 	viper.SetConfigType("env")
 
-	viper.BindEnv("DB_DRIVER")
-	viper.BindEnv("DB_SOURCE")
-	viper.BindEnv("SERVER_ADDRESS")
 	viper.AutomaticEnv()
 
 	viper.WatchConfig()
