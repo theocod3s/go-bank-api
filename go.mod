@@ -1,10 +1,11 @@
-module github.com/theodod3s/simplebank
+module github.com/theocod3s/simplebank
 
 go 1.20
 
 require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/gin-gonic/gin v1.9.0
+	github.com/golang/mock v1.4.4
 	github.com/lib/pq v1.10.9
 	github.com/spf13/viper v1.15.0
 	github.com/stretchr/testify v1.8.3
