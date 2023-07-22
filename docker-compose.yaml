@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=simplebank
+    healthcheck:
+      test: pg_isready -h localhost -U root -d simplebank
+      interval: 10s
+      timeout: 5s
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_SOURCE=postgresql://root:secret@postgres:5432/simplebank?sslmode=disable
+      - GIN_MODE=release
+    depends_on:
+      postgres:
+        condition: service_healthy
+        restart: true
