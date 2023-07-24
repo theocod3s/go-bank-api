@@ -26,3 +26,9 @@ docker run --rm --name simplebank -p 8080:8080 -e GIN_MODE=release simplebank:la
 ```
 aws secretsmanager get-secret-value --secret-id <friendly name/arn> --query SecretString --output text | jq -r 'to_entries|map("\(.key)=\(.value)")|.[]'
 ```
+
+## ECR docker login
+
+```
+aws ecr get-login-password | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.eu-central-1.amazonaws.com
+```
