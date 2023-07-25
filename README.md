@@ -40,3 +40,19 @@ aws ecr get-login-password | docker login --username AWS --password-stdin aws_ac
 ## Nice to have tools
 
 - https://k9scli.io/: `:resource` eg; :ns (namespace), :pod (pods)
+
+## Steps to deploy
+
+- Create RDS database
+- Create ecr repository
+- Create github actions role with ecr and secrets manager permissions
+- Store secrets in secrets manager
+- Load secrets from secrets manager in gh action
+- Create eks cluster, node group and nodes (min t3.small - 11 pods)
+- Give github user access to cluster with config map (Argo CD in the future)
+
+## NGINX ingress controller for AWS
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/aws/deploy.yaml
+```
