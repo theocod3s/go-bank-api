@@ -32,3 +32,11 @@ aws secretsmanager get-secret-value --secret-id <friendly name/arn> --query Secr
 ```
 aws ecr get-login-password | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.eu-central-1.amazonaws.com
 ```
+
+## K8s
+
+- `aws-auth-cm.yaml` is to give access to github user to access the eks cluster
+
+## Nice to have tools
+
+- https://k9scli.io/: `:resource` eg; :ns (namespace), :pod (pods)
