@@ -46,6 +46,7 @@ aws ecr get-login-password | docker login --username AWS --password-stdin aws_ac
 - Create RDS database
 - Create ecr repository
 - Create github actions role with ecr and secrets manager permissions
+- Create A record for ingress
 - Store secrets in secrets manager
 - Load secrets from secrets manager in gh action
 - Create eks cluster, node group and nodes (min t3.small - 11 pods)
