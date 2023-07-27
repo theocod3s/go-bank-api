@@ -41,7 +41,7 @@ aws ecr get-login-password | docker login --username AWS --password-stdin aws_ac
 
 - https://k9scli.io/: `:resource` eg; :ns (namespace), :pod (pods)
 
-## Steps to deploy
+## Steps to deploy (TODO: use TF)
 
 - Create RDS database
 - Create ecr repository
@@ -56,3 +56,5 @@ aws ecr get-login-password | docker login --username AWS --password-stdin aws_ac
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/aws/deploy.yaml
 ```
+
+- https://cert-manager.io/docs/usage/ingress/
